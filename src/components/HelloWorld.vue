@@ -1,10 +1,6 @@
 <script setup>
 import { computed, reactive } from 'vue'
 
-defineProps({
-  msg: String
-})
-
 let elems = reactive([1, 2, 3, 4, 5, 6])
 
 computed(function filtered(elems){
@@ -21,7 +17,7 @@ computed(function filtered(elems){
     <ul class="list" v-if="elems.length">
       <li class="list-item"
        @click="elems.splice(index, 1)"
-       v-for="(elem, index) in filtered"
+       v-for="(elem, index) in elems"
        :key = elem
        >
        index{{index}} - {{elem}}
