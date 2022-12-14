@@ -12,6 +12,7 @@ let elems = reactive(['Попить чай', 'Покодить', 'Написат
   function addItem(inp){
     let input = ref(inp)
     elems.push(input._value)
+    input._value = ref(0)
   }
 
 </script>
@@ -27,7 +28,7 @@ let elems = reactive(['Попить чай', 'Покодить', 'Написат
        v-for="(elem, index) in filtered()"
        :key = elem
        >
-       {{index}}
+       {{index + 1}}
        
         <input id="itemInput" @click.stop :value="elem">
       </li>
